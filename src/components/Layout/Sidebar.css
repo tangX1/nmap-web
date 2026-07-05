@@ -1,0 +1,129 @@
+/* NetScan Sidebar — dark theme */
+/* Assumes a mono font stack; add to :root if not already set:
+   --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace; */
+
+   .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 256px;
+    height: 100vh;
+    padding: 0;
+    background: #0b0f14;
+    border-right: 1px solid #1b2430;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    color: #9aa6b2;
+  }
+  
+  /* Brand block */
+  .sidebar__brand {
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid #1b2430;
+  }
+  
+  .sidebar__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f4f7fa;
+    letter-spacing: 0.2px;
+  }
+  
+  .sidebar__version {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #5c6b7a;
+  }
+  
+  /* Navigation */
+  .sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 12px;
+    flex: 1;
+  }
+  
+  .sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #9aa6b2;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  
+  .sidebar__link:hover {
+    background: #131b24;
+    color: #d6dee6;
+  }
+  
+  .sidebar__link--active {
+    background: #16211c;
+    color: #22e58a;
+    box-shadow: inset 2px 0 0 #22e58a;
+  }
+  
+  .sidebar__icon {
+    flex-shrink: 0;
+  }
+  
+  /* Footer */
+  .sidebar__footer {
+    padding: 16px;
+    border-top: 1px solid #1b2430;
+  }
+  
+  .sidebar__discovery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #22e58a;
+    color: #04140c;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  
+  .sidebar__discovery:hover {
+    background: #2ff29a;
+  }
+  
+  .sidebar__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  
+  .sidebar__meta-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #6b7885;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  
+  .sidebar__meta-link:hover {
+    color: #d6dee6;
+  }
+  
+  /* Accessibility */
+  .sidebar__link:focus-visible,
+  .sidebar__discovery:focus-visible,
+  .sidebar__meta-link:focus-visible {
+    outline: 2px solid #22e58a;
+    outline-offset: 2px;
+  }

@@ -1,209 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
-html, body, #root {
-    overflow: hidden !important;
-    height: 100vh !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-  }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --bg-base:      #0a0e1a;
-  --bg-surface:   #161b27;
-  --bg-card:      #1a1f2e;
-  --accent-green: #00ff88;
-  --accent-cyan:  #00d4ff;
-  --accent-amber: #ffaa00;
-  --accent-red:   #ff4444;
-  --text-primary: #e2e8f0;
-  --text-muted:   #64748b;
-  --border:       #1e293b;
-  --font-mono:    'JetBrains Mono', monospace;
-  --font-sans:    'Inter', sans-serif;
-}
-
-body {
-  background: var(--bg-base);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-  height: 100vh;
-  overflow: hidden;
 }
 
 html {
-    overflow: hidden;
-    height: 100%;
-  }
-
-#root {
-  height: 100vh;
-  display: flex;
-}
-
-.app-wrapper {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .app-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  .app-main {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1.5rem;
-  }
-  
-  /* ── TopBar ─────────────────────────────── */
-
-.topbar {
-    height: 56px;
-    background: var(--bg-surface);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.5rem;
-    flex-shrink: 0;
-  }
-  
-  .topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .status-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    border: 1px solid var(--accent-green);
-    border-radius: 999px;
-    padding: 0.25rem 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-green);
-    letter-spacing: 0.08em;
-  }
-  
-  .status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent-green);
-    animation: pulse 2s ease-in-out infinite;
-  }
-  
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.3; }
-  }
-  
-  /* ── Pages ──────────────────────────────── */
-  
-  .page {
-    height: 100%;
-  }
-  
-  .dashboard-page {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  /* ── Terminal Window ────────────────────── */
-  
-  .console-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 740px;
-    margin: 2rem auto;
-  }
-  
-  .console-titlebar {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.65rem 1rem;
-    background: var(--bg-surface);
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .console-titlebar .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-  
-  .dot.red    { background: #ff5f57; }
-  .dot.yellow { background: #febc2e; }
-  .dot.green  { background: #28c840; }
-  
-  .console-title {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-left: 0.4rem;
-  }
-  
-  .console-body {
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    min-height: 200px;
-  }
-  
-  .console-body p {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-  
-  .console-body .green  { color: var(--accent-green); }
-  .console-body .prompt { color: var(--accent-green); margin-top: 0.5rem; }
-  
-  .cursor {
-    display: inline-block;
-    width: 9px;
-    height: 15px;
-    background: var(--accent-green);
-    vertical-align: middle;
-    margin-left: 2px;
-    animation: blink 1s step-end infinite;
-  }
-  
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
-  
-  /* ── Scrollbar ──────────────────────────── */
-  
-  ::-webkit-scrollbar        { width: 6px; }
-  ::-webkit-scrollbar-track  { background: var(--bg-base); }
-  ::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
 }
 
 :root {
@@ -231,13 +36,16 @@ body {
 
 #root {
   height: 100vh;
+  width: 100%;
   display: flex;
+  overflow: hidden;
 }
 
 /* ── Layout ─────────────────────────────── */
 
 .app-wrapper {
   display: flex;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
 }
@@ -246,13 +54,14 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  overflow: hidden;
   min-width: 0;
+  overflow: hidden;
 }
 
 .app-main {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 1.5rem;
 }
 

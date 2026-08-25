@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+CLAUDE.md
+stitch_netscan_security_dashboard/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

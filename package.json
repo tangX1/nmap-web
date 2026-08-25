@@ -6,29 +6,38 @@
   "scripts": {
     "dev": "vite",
     "dev:staging": "vite --mode staging",
+    "dev:server": "node server/index.js",
+    "dev:full": "concurrently -n web,api \"npm:dev\" \"npm:dev:server\"",
     "build": "vite build",
     "lint": "oxlint && eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "lucide-react": "^1.23.0",
+    "node-nmap": "^4.0.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-router-dom": "^7.18.1"
+    "react-router-dom": "^7.18.1",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
     "@eslint/js": "^10.0.1",
     "@rolldown/plugin-babel": "^0.2.3",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
     "babel-plugin-react-compiler": "^1.0.0",
+    "concurrently": "^9.2.4",
     "eslint": "^10.6.0",
     "eslint-plugin-oxlint": "^1.72.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "tailwindcss": "^4.3.3",
     "vite": "^8.1.1"
   }
 }

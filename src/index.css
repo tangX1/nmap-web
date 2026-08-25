@@ -1,4 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #0f131f;
+  --color-surface-dim: #0f131f;
+  --color-surface-bright: #353946;
+  --color-surface-container-lowest: #0a0e1a;
+  --color-surface-container-low: #171b28;
+  --color-surface-container: #1b1f2c;
+  --color-surface-container-high: #262a37;
+  --color-surface-container-highest: #313442;
+  --color-surface-variant: #313442;
+  --color-surface-tint: #00e479;
+  --color-on-surface: #dfe2f3;
+  --color-on-surface-variant: #b9cbb9;
+  --color-inverse-surface: #dfe2f3;
+  --color-inverse-on-surface: #2c303d;
+  --color-outline: #849585;
+  --color-outline-variant: #3b4b3d;
+  --color-background: #0f131f;
+  --color-on-background: #dfe2f3;
+
+  --color-primary: #f1ffef;
+  --color-on-primary: #003919;
+  --color-primary-container: #00ff88;
+  --color-on-primary-container: #007139;
+  --color-inverse-primary: #006d37;
+  --color-primary-fixed: #60ff99;
+  --color-primary-fixed-dim: #00e479;
+  --color-on-primary-fixed: #00210c;
+  --color-on-primary-fixed-variant: #005228;
+
+  --color-secondary: #a2e7ff;
+  --color-on-secondary: #003642;
+  --color-secondary-container: #00d2fd;
+  --color-on-secondary-container: #005669;
+  --color-secondary-fixed: #b4ebff;
+  --color-secondary-fixed-dim: #3cd7ff;
+  --color-on-secondary-fixed: #001f27;
+  --color-on-secondary-fixed-variant: #004e5f;
+
+  --color-tertiary: #fffaf8;
+  --color-on-tertiary: #452b00;
+  --color-tertiary-container: #ffd8a7;
+  --color-on-tertiary-container: #875800;
+  --color-tertiary-fixed: #ffddb4;
+  --color-tertiary-fixed-dim: #ffb952;
+  --color-on-tertiary-fixed: #291800;
+  --color-on-tertiary-fixed-variant: #633f00;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body-lg: 'Inter', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-headline-sm: 'Inter', sans-serif;
+  --font-headline-md: 'Inter', sans-serif;
+  --font-display-lg: 'Inter', sans-serif;
+  --font-mono-code: 'JetBrains Mono', monospace;
+  --font-mono-label: 'JetBrains Mono', monospace;
+  --font-status-pill: 'JetBrains Mono', monospace;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 600;
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+  --text-display-lg: 32px;
+  --text-display-lg--line-height: 40px;
+  --text-display-lg--font-weight: 700;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-mono-code: 14px;
+  --text-mono-code--line-height: 20px;
+  --text-mono-code--font-weight: 400;
+  --text-mono-label: 12px;
+  --text-mono-label--line-height: 16px;
+  --text-mono-label--font-weight: 500;
+  --text-mono-label--letter-spacing: 0.05em;
+  --text-status-pill: 11px;
+  --text-status-pill--line-height: 12px;
+  --text-status-pill--font-weight: 700;
+
+  --spacing-unit: 4px;
+  --spacing-gutter: 16px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 24px;
+  --spacing-container-max: 1440px;
+
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+/*
+ * Everything below is legacy hand-written CSS predating Tailwind. It's
+ * wrapped in @layer base so Tailwind's utility classes (@layer utilities)
+ * can still override it — unlayered CSS always beats layered CSS in the
+ * cascade regardless of specificity, so without this wrapper rules like
+ * this file's `* { padding: 0 }` reset silently nullify every Tailwind
+ * padding/margin utility app-wide.
+ */
+@layer base {
 
 * {
   margin: 0;
@@ -407,3 +520,5 @@ body {
 ::-webkit-scrollbar-track  { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+} /* end @layer base */

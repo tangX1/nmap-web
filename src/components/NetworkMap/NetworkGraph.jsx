@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { apiUrl } from '../../apiBase'
 import {
   Router,
   Database,
@@ -105,7 +106,7 @@ export default function NetworkGraph() {
 
     async function poll() {
       try {
-        const res = await fetch('/api/hosts')
+        const res = await fetch(apiUrl('/api/hosts'))
         const data = await res.json()
         if (!cancelled) {
           setHosts(data)

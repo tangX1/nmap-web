@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Trash2, ArrowDown } from 'lucide-react'
+import { apiUrl } from '../../apiBase'
 
 const MAX_ENTRIES = 500
 const SCROLL_BOTTOM_THRESHOLD_PX = 24
@@ -22,7 +23,7 @@ export default function LogStream() {
   const scrollRef = useRef(null)
 
   useEffect(() => {
-    const source = new EventSource('/api/logs/stream')
+    const source = new EventSource(apiUrl('/api/logs/stream'))
     source.onopen = () => setConnected(true)
     source.onerror = () => setConnected(false)
     source.onmessage = (event) => {

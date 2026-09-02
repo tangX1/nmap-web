@@ -3,6 +3,7 @@ import ScanControlPanel from '../components/Dashboard/ScanControlPanel'
 import TerminalWindow from '../components/Dashboard/TerminalWindow'
 import HostResults from '../components/Dashboard/HostResults'
 import ConsoleWindow from '../components/Dashboard/ConsoleWindow'
+import { apiUrl } from '../apiBase'
 
 const POLL_INTERVAL_MS = 1500
 
@@ -30,7 +31,7 @@ export default function DashboardPage() {
     setScanResult(null)
 
     try {
-      const res = await fetch('/api/scans', {
+      const res = await fetch(apiUrl('/api/scans'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ target, scanType }),
@@ -45,7 +46,7 @@ export default function DashboardPage() {
       }
 
       pollRef.current = setInterval(async () => {
-        const pollRes = await fetch(`/api/scans/${body.scanId}`)
+        const pollRes = await fetch(apiUrl(`/api/scans/${body.scanId}`))
         const record = await pollRes.json()
         if (!mountedRef.current) return
 

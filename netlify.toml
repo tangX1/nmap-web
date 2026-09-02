@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# The Express backend runs as its own long-running process on a VPS, not on
+# Netlify (see vps-nmap-api/README.md and CLAUDE.md). Set VITE_API_BASE_URL
+# in Netlify's own dashboard (Site configuration > Environment variables) to
+# the backend's public URL, e.g. http://your-vps-ip:3001 — not here, so it
+# doesn't get committed and can differ per Netlify site/branch without a
+# code change. The frontend calls it directly (src/apiBase.js) rather than
+# through a Netlify redirect, since the Logs page's SSE connection needs a
+# real held-open connection that a static host's request-proxying isn't
+# built for.
+
+# Client-side routing: any path not matching a real file falls back to
+# index.html so React Router handles it.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

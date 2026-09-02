@@ -1,0 +1,14 @@
+{
+  "name": "vps-nmap-api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "xml2js": "^0.4.23"
+  }
+}

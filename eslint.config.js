@@ -9,7 +9,7 @@ export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{js,jsx}'],
-    ignores: ['server/**'],
+    ignores: ['server/**', 'vps-nmap-api/**'],
     extends: [
       js.configs.recommended,
       reactHooks.configs.flat.recommended,
@@ -21,7 +21,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['server/**/*.js'],
+    files: ['server/**/*.js', 'vps-nmap-api/**/*.js'],
     extends: [js.configs.recommended],
     languageOptions: {
       globals: globals.node,

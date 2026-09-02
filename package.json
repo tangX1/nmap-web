@@ -16,11 +16,9 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "lucide-react": "^1.23.0",
-    "node-nmap": "^4.0.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-router-dom": "^7.18.1",
-    "xml2js": "^0.4.23"
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
